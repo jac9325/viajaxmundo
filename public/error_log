@@ -1,0 +1,2 @@
+[08-Nov-2022 19:53:29 America/Mexico_City] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.0.2". You are running 7.3.33. in /home1/kajawebs/services.viajaxmundo.com/vendor/composer/platform_check.php on line 24
+[08-Nov-2022 19:53:34 America/Mexico_City] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.0.2". You are running 7.3.33. in /home1/kajawebs/services.viajaxmundo.com/vendor/composer/platform_check.php on line 24
