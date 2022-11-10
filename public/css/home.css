@@ -1,0 +1,21 @@
+.img-logo{
+    max-width: 180px;
+}
+
+.dashboard{
+    background-color: #F5F7FD;
+}
+.img-perfil{
+    max-width: 40px;
+    margin-right: 10px;
+}
+.button-perfil{
+    border-radius: 25px;
+}
+.button-perfil:hover{
+    background-color: #4CAF50;
+    
+}
+a{
+    color:#515255!important;
+}
