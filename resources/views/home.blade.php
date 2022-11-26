@@ -13,7 +13,7 @@
     <main>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12 col-md-2 menu">
+                <div class="col-12 col-md-4 col-lg-2 menu">
                     <div>
                         <figure class="text-center mt-3">
                             <img src="https://viajaxmundo.com/wp-content/uploads/2022/08/logo-black.png" alt="" class="img-logo">
@@ -45,12 +45,81 @@
                         </div>                                                    
                     </div>
                     <hr>
+
+                    <div>
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <div class="accordion-header" id="flush-headingOne">
+                                    <button class="accordion-button collapsed button-perfil" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                        <i class="fa-solid fa-person-walking-luggage me-2"></i>
+                                        Pasajeros
+                                    </button>
+                                </div>
+                              <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <p>
+                                        <a href="" style="text-decoration:none">
+                                            <i class="fa-solid fa-address-book me-2"></i> Nuevo Pasajero
+                                        </a>
+                                    </p>
+                                    <p>
+                                        <a href="" style="text-decoration:none">
+                                            <i class="fa-solid fa-list-check me-2"></i> Logout
+                                        </a>
+                                    </p>
+                                </div>
+                              </div>  
+                            </div>
+                        </div>                                                    
+                    </div>
+
+                    <hr>
+
+                    <div>
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <div class="accordion-header" id="flush-headingOne">
+                                    <button class="accordion-button collapsed button-perfil" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                        <i class="fa-solid fa-file-invoice-dollar me-2"></i>
+                                        Cotizaciones
+                                    </button>
+                                </div>
+                              <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <p>
+                                        <a href="" style="text-decoration:none">
+                                            <i class="fa-solid fa-file-circle-plus me-2"></i> Nueva Cotización
+                                        </a>
+                                    </p>
+                                    <a href="" style="text-decoration:none">
+                                        <i class="fa-solid fa-rectangle-list me-2"></i>
+                                        Mis Cotizaciones
+                                    </a>
+                                </div>
+                              </div>  
+                            </div>
+                        </div>                                                    
+                    </div>
+                    <hr>
+
                 </div>
-                <div class="col-12 col-md-10 dashboard">
+
+                <!-- Dashboard -->
+
+                <div class="col-12 col-md-8 col-lg-10 dashboard my-3 ">
                     <!-- Nav -->
-                    <!-- /Nav -->
-                    <i class="fa-solid fa-house"></i> <h1>Bienvenido al Area de servicios de Viajaxmundo</h1>
+                    <div class="row">
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-star my-3 mx-3">
+                            <span class="titulo-dashboard">Dashboard de Jaime</span>
+                            <button type="button" class="btn btn-danger ">Nueva Cotización</button>
+                            <button type="button" class="btn btn-success px-5">Nuevo Pax</button>
+                        </div>                
+                    </div>
+                    <!-- /Nav --> 
+                    <h1>Bienvenido al Area de servicios de Viajaxmundo</h1>
                 </div>
+
+                <!-- Dashboard -->
             </div>
           </div>
     </main>
