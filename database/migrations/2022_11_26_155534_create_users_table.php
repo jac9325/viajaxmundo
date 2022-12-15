@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string("user",200);
             $table->string("password",200);
             $table->integer("status");
-            $table->integer("profile_id");
+            $table->foreignId("profile_id")->constrained()->onDelete('cascade');
             $table->timestamps();
             
         });

@@ -1,9 +1,10 @@
 @extends('Home.layout')
 @section('content')
-<h1>Hola bienvenido a Crear Usuarios</h1>
+<h1>Editar Usuario</h1>
 @include('Fragment._errors-form')
  
-<form action="{{route('user.store')}}" method="POST">
+<form action="{{route('user.update', $user->id)}}" method="post">
+    @method('PUT')
      @csrf
      @include('User.__Form')
  </form>

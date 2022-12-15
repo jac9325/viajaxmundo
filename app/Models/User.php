@@ -20,4 +20,9 @@ class User extends Model
         'status',
         'profile_id'
     ];
+
+    public function Profile()
+    {
+        return $this->belongsTo(Profile::class);
+    }
 }

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\User\StoreRequest;
+use App\Http\Requests\User\UpdateRequest;
 use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -16,7 +18,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        //Obtener todos los usuarios
+        $users = User::paginate(5);
+        return view('User.index', compact('users'));
         
     }
 
@@ -28,7 +32,8 @@ class UserController extends Controller
     public function create()
     {
         $profiles = Profile::pluck('id','title');
-        return view('User.create',compact('profiles'));
+        $user = new User();
+        return view('User.create',compact('profiles','user'));
     }
 
     /**
@@ -37,10 +42,13 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
-       //echo dd($request->all());
-        User::create($request->all());
+
+       //validar lo que viene para que no le permita crear
+       //$validated = $request->validate(StoreRequest::myRules());
+       User::create($request->all());
+       return to_route("user.index")->with('status','Registro creado correctamente');;
     }
 
     /**
@@ -49,9 +57,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        //
+        return view('User.show', compact('user'));
     }
 
     /**
@@ -60,9 +68,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        //editar un usuario
+        
+        $profiles = Profile::pluck('id','title');
+        return view('User.edit',compact('profiles', 'user'));
     }
 
     /**
@@ -72,9 +83,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateRequest $request, User $user)
     {
         //
+        $user->update($request->validated());
+        return to_route("user.index")->with('status','Registro actualizado correctamente');
     }
 
     /**
@@ -83,8 +96,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        //eliminar un usuario
+        $user->delete();
+        return to_route("user.index")->with('status','Registro elimnado correctamente');;
     }
 }
